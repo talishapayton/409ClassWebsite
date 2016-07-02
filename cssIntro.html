@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Intro to CSS</title>
+	<link rel = "stylesheet" type= "text/css" href= "styles.css"/>
+	<style type="text/css">
+	#localNav{
+		font-size: .8em;
+		padding-left: -6%;
+	}
+	</style>
+
+
+</head>
+
+<body>
+		<a name="top"></a>
+
+		<div id = "header">
+			<h1>Web Design and Implementation</h1>
+			<p>409 - 737 * Winter 2011-12 * Prof. Jeff Sonstein</p>	
+		</div>
+		
+		<div id ="globalNav">
+			<ul>
+				<li><a href="index.html"><img src = "homeIcon.png" alt="Home" width="48" height="48"/></a> </li>
+				<li>| <a id="current" href="syllabus.html">Syllabus</a></li>
+
+				<li>| <a href="outline.html">Outline</a></li>
+				<li>| <a href="projects.html">Projects</a></li>
+				<li>| <a href="details.html">Details</a></li>
+			</ul>
+		</div>
+			
+		<div id ="localNav">
+
+			<ul>
+				<li><a href="#part1">Week 2</a></li>
+			</ul>
+		</div>
+		
+	<div id = "mainContent">
+		  
+  <h1>Color, Type, and (CSS) Style</h1>
+  <h2>Background</h2>
+  <p><em>Cascading Style Sheets</em> (also known as <em>CSS</em>) allow us to separate <em>presentation</em> from <em>content</em>. This is how we can reuse the same content in different forms. CSS lets us apply different styles in different contexts, and CSS lets us change the "look and feel" of an entire website with just a few keystrokes. CSS saves a webmaster a lot of work if used properly, provides a great deal of flexibility in how all the pages of a site are displayed, and provides a great deal of flexibility in reusing content.</p>
+
+  <p>The "slides" I have posted online cover the core of how to make CSS code happen. We are going to "walk through" at least the first slide-set in class, so I can be available to answer the questions which inevitably arise from looking at this material. <em>Do not let the mass of details worry you.</em> The basics are actually not very difficult, once you get used to the notation used, and the coding practice you will go through in this class should help a lot.</p>
+  <h3>Why are they called "Cascading"?</h3>
+  <p>These are called "cascading" style sheets because you can apply more than one to the same document, and because each additional style sheet applied to a document can add to or over-ride the settings established in <em>previously-applied</em> stylesheets. For example, you can have a basic stylesheet which gets applied to <em>all</em> the pages at a website first to establish a site-wide "look and feel", and then an additional stylesheet for each "area" or "informational chunk" in your website.</p>
+
+  <p>Say you have divided the pages at your website into several "chunks": one set of pages about the various products sold at the site, and another set of pages with product support information. You could have one site-wide stykleshhet which is referenced first in all webpages, and thus is applied first to all pages requested. You could also have a second stylesheet specific to the product pages (say, setting a light yellow background for those pages) and you could apply a different second stylesheet to all the product support pages (say, setting a light orange background for <em>those</em> pages).</p>
+  <h3>Want to see a step-by-step example?</h3>
+  <p><a href="./example_00.html" title="sequence showing application of CSS style and then positioning rules">Take a look at this sequence of pages</a>. Examine the HTML and CSS at each step (the <a href="http://www.mozilla.com/firefox/" title="Firefox distribution site">Firefox</a> <a href="http://chrispederick.com/work/webdeveloper/" title="Web Developer Toolbar extention distribution site">Web Developer Toolbar extention</a> is a big help here). See if you can figure out what is going on at each step.</p>
+
+  <h4>Additional Materials Online</h4>
+  <p><a href="./BasicCSS_00.mov">CSS Introductory Notes</a></p>
+  <h3>Some Online Webmaster Resources</h3>
+  <ul>
+    <li><a href="http://www.natural-innovations.com/wa/doc-charset.html" title="read about inserting strange characters into HTML">HTML Character Entities</a></li>
+    <li><a href="http://www.ficml.org/jemimap/style/color/wheel.html" title="help choosing colors for the Web">Color Wheel</a></li>
+
+    <li><a href="http://www.w3.org/QA/Tips/" title="think about W3C on Writing Quality Webpages">Quality Tips for Webmasters</a></li>
+    <li><a href="http://www.chrispederick.com/work/firefox/webdeveloper/" title="obtain Web Developer extension toolbar">Web Developer Extension Menubar</a> (Netscape, Firefox, Mozilla all platforms)</li>
+    <li><a href="http://validator.w3.org/checklink/" title="use W3C link checker">W3C Link-Checker</a></li>
+    <li><a href="http://www.useit.com/alertbox/990530.html" title="review excellent article on Web design issues">The Top Ten New Mistakes of Web Design</a></li>
+    <li><a href="http://www.nypl.org/styleguide/" title="read New York City Public Library style guide for Web pages">NYPL Online Style Guide</a></li>
+
+    <li><a href="http://www.webmonkey.com/webmonkey/reference/stylesheet_guide/" title="visit CSS reference page">CSS Quick-Reference Guide</a></li>
+    <li><a href="http://www.webmonkey.com/webmonkey/reference/unix_guide/" title="access Webmonkey UNIX reference page">Unix Quick-Reference Guide</a></li>
+  </ul>
+  <h3>Unix Review Materials</h3>
+  <p>These links are to materials you can use to review your Unix knowledge. They will also give you an idea of what might be done simply to build a tutorial. These tutorials courtesy <a href="http://www.it.rit.edu/~jaj" title="Exit to website for Prof Jackson">Professor Jackson</a>:</p>
+  <ul>
+
+    <li><a href="./unix1.html" title="access Unix tutorial 1">Unix tutorial: directories and paths</a></li>
+    <li><a href="./unix2.html" title="access Unix tutorial 2">Unix tutorial: copying and moving files</a></li>
+    <li><a href="./unix3.html" title="access Unix tutorial 3">Unix tutorial: file system security</a></li>
+  </ul><hr />
+
+		 
+	</div>
+	
+</body>
+</html>

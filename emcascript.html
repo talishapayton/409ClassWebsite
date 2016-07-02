@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practical ECMAScript</title>
+	<link rel = "stylesheet" type= "text/css" href= "styles.css"/>
+</head>
+
+<body>	
+		<a name="top"></a>
+		<div id = "header">
+			<h1>Web Design and Implementation</h1>
+			<p>409 - 737 * Winter 2011-12 * Prof. Jeff Sonstein</p>	
+		</div>
+		
+		<div id ="globalNav">
+			<ul>
+				<li><a href="index.html"><img src = "homeIcon.png" alt="Home" width="48" height="48"/></a> </li>
+				<li>| <a href="syllabus.html">Syllabus</a></li>
+				<li>| <a id="current" href="outline.html">Outline</a></li>
+				<li>| <a href="projects.html">Projects</a></li>
+				<li>| <a href="details.html">Details</a></li>
+			</ul>
+		</div>
+			
+		<div id ="localNav">
+			<ul>
+				<li><a href="#part1">Week 3</a></li>
+			</ul>
+		</div>
+		
+	<div id = "mainContent">
+
+			<h1>Practical ECMAScript</h1>
+			
+			<h2>Problem: Fighting Off the Email Scrapers</h2>
+			<p>Constructing a Web <em>"spider"</em> to walk through a Web site is not really hard any more. Simple libraries exist to make this a fairly trivial task. Adding a <em>"scraper"</em> to the code so that a <em>"spider"</em> extracts <em>email addresses</em> from the pages it encounters is also not really hard. You simply tell it to look for <em>anchor tags</em> on the pages it encounters, and then to check for the presence of the string <em>"mailto:"</em> within the <em>href</em> attribute, and you have an email address <em>scraper</em>. This is how many spam systems gather up email addresses.</p>
+			<p>So, how do Webmasters defeat these systems while continuing to post email links on Web pages? The solution is a simple one, if you know a little <em>JavaScript</em> (aka <em>ECMAScript</em>).</p>
+			<h2>Solution: Use ECMAScript</h2>
+			<p><em>JavaScript</em> is a standard scripting language which is supported by all the current and reasonably-recent crop of Web browsers. <em>JavaScript</em> is turned on by default when someone installs a Web browser. There were initially a million different versions of <em>JavaScript</em>, so the <em>European Computer Manufacturers Association</em> (aka <em>ECMA</em>) came up with a standard version which is now supported by everyone. This standard version of <em>JavaScript</em> is known as <em>ECMAScript</em>.</p>
+			<h3>The Meta-Tag</h3>
+			<p>To add a call to include an ECMAScript into your Web page, you simply add a <em>script meta-tag</em> into the <em>head</em> element. It might look like this:</p>
+			<pre>
+			&lt;script 
+			  src="http://www.it.rit.edu/~jxs/javascript/genericEmail.js" 
+			  type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+		  
+		</pre>
+			<h3>The Function</h3>
+			<p>The following function is a simple example of using <em>ECMAScript</em> to perform dynamic functions within a Web page. Note that it is simply a function call with three arguments:</p>
+			<ul>
+			  <li>user name</li>
+			  <li>email server name</li>
+			  <li>and a Subject header for the resulting email</li>
+			</ul>
+			<p>If you use a call to this instead of a standard <em>mailto:</em> URI, then an <em>email address scraper</em> will not be able to harvest email addresses from your Web pages. Here is what the function might look like:</p>
+			<pre>
+			function genericEmail( user, target, subject ) {
+			  window.location = "mailto:" + user + "@" + target + "?Subject=" + subject;
+			}
+		  
+		</pre>
+			<p>Note the use of <em>window.location</em> in the ECMAScript function. What does that mean? (hint: do a Google search on <em>window.location</em> and see what you find)</p>
+			<h3>The Function Call</h3>
+			<p>If you add something like the following code into a <em>block-level</em> container within the <em>body</em> of your HTML, then the function will get called when the user clicks on the anchor:</p>
+			<pre>
+			&lt;a href="#" title="send the instructor email" 
+			  onclick="genericEmail( 'jeffs', 'it.rit.edu', 'test email' );"&gt;test email script&lt;/a&gt;
+		  
+		</pre>
+			<p>Note the use of a dummy <em>href</em> value. This insures the browser will just keep the display at the current position on the current page. Note also the use of the three function arguments:</p>
+			<ul>
+			  <li>user name: jeffs</li>
+			  <li>email server name it.rit.edu</li>
+			  <li>Subject header string: test email</li>
+			</ul>
+			<p>The function is called when the user clicks on the <em>anchor</em>. The three arguments are concatenated together by the function to construct a complete email call. Note the use of single-quotes within the double-quotes surrounding the value of the <em>onclick</em> attribute. Note also how the function call ends with a semi-colon.</p>
+			<h3>A Full-Featured Version</h3>
+			<p>Here is a <em>full featured</em> version using a <em>span</em>, including cursor changes and underlining and so on. To make it easier to follow, the style instructions are <em>inline</em>.</p>
+			<h4>Code</h4>
+			<pre>
+			 &lt;span title="send the instructor email" 
+			  onclick="genericEmail( 'jeffs', 'it.rit.edu', 'test email' );" 
+			  style="font: italic 100%/1.0 Georgia, serif; text-decoration: underline; 
+				color: #0000ff; background: #ffffff;"
+			  onmouseover="this.style.color='#0000ff'; this.style.background='#ffff00';
+				this.style.cursor='pointer';" 
+			  onmouseout="this.style.color='#0000ff'; this.style.background='#ffffff';
+				 this.style.cursor='default';"&gt;test email script&lt;/span&gt;
+		  
+		</pre>
+			<h4>Try It</h4>
+			<p><span title="send the instructor email" onclick="genericEmail( 'jeffs', 'it.rit.edu', 'test email' );" style="font: italic 100%/1.0 Georgia, serif; text-decoration: underline; color: #0000ff; background: #ffffff;" onmouseover="this.style.color='#0000ff'; this.style.background='#ffff00'; this.style.cursor='pointer';" onmouseout="this.style.color='#0000ff'; this.style.background='#ffffff'; this.style.cursor='default';">test email script</span></p>
+			<h3>An Improved Version</h3>
+			<p>Of course, the demo code above violates the principle of <em>separation of concerns</em>. It contains direct dynamic style instructions, rather than isolating things where they belong. Remember our discussion of how HTML, CSS, and JavaScript basically adhere to the <em>Model - View - Controller</em> paradigm. Let's improve the above, separating the dynamic stuff into the JavaScript code and thereby making our HTML cleaner and easier to read.</p>
+			<h4>A Slight Digression: the Keyword <em>this</em></h4>
+			<p>The keyword <em>this</em> is a very valuable one to understand and to use. If we pass <em>this</em> as an argument from an event-handler call in the HTML, like <em>onmouseover</em> or <em>onmouseout</em> or <em>onclick</em>, then the keyword <em>this</em> refers to the element which the event-handler is servicing (<a href="http://www.quirksmode.org/js/this.html" title="access JavaScript article on the keyword this at quirksmode.org)">see this article</a> for more details and a longer explanation). That way you can use the keyword <em>this</em> to pass a reference to a specific HTML element on to a JavaScript function. The JavaScript function does not need to do any extra work to find that element, and you don't even have to give the element a unique id. This is quite handy, and keeps your HTML from getting all cluttered up.</p>
+			<h4>Code</h4>
+			<h5>The HTML</h5>
+			<pre>
+			&lt;span class="pseudo_anchor" title="send the instructor email" 
+			  onclick="genericEmail( 'jeffs', 'it.rit.edu', 'test email' );" 
+			  onmouseover="mouseEnter( this );" 
+			  onmouseout="mouseExit( this );"&gt;test cleaner email script&lt;/span&gt;
+		  
+		</pre>
+			<h5>The CSS</h5>
+			<pre>
+			.pseudo_anchor {
+			  font: italic 100%/1.0 Georgia, serif;
+			  text-decoration: underline;
+			  color: #0000ff;
+			  background: #ffffff;
+			}
+		  
+		</pre>
+			<h5>The JavaScript</h5>
+			<pre>
+			function genericEmail( user, target, subject ) {
+			  window.location = "mailto:" + user + "@" + target + "?Subject=" + subject;
+			}
+
+			function mouseEnter( what ) {
+			  what.style.color = "#0000ff";
+			  what.style.background = "#ffff00";
+			  what.style.cursor = "pointer";
+			}
+
+			function mouseExit( what ) {
+			  what.style.color = "#0000ff";
+			  what.style.background = "#ffffff";
+			  what.style.cursor = "default";
+			}
+		  
+		</pre>
+		<hr/>
+	</div>
+</body>
+</html>

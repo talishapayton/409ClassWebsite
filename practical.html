@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice Practical</title>
+	<link rel = "stylesheet" type= "text/css" href= "styles.css"/>
+	<style type = "text/css">
+	#localNav{
+		font-size: .8em;
+		padding-left: -6%;
+	}
+	</style>
+</head>
+
+<body>	
+		<a name="top"></a>	
+		<div id = "header">
+			<h1>Web Design and Implementation</h1>
+			<p>409 - 737 * Winter 2011-12 * Prof. Jeff Sonstein</p>	
+		</div>
+		
+		<div id ="globalNav">
+			<ul>
+				<li><a href="index.html"><img src = "homeIcon.png" alt="Home" width="48" height="48"/></a> </li>
+				<li>| <a href="syllabus.html">Syllabus</a></li>
+				<li>| <a id="current" href="outline.html">Outline</a></li>
+				<li>| <a href="projects.html">Projects</a></li>
+				<li>| <a href="details.html">Details</a></li>
+			</ul>
+		</div>
+			
+		<div id ="localNav">
+			<ul>
+				<li><a href="#part1">Individual Midterm</a></li>
+				<li><a href="#part2">Group Midterm</a></li>
+				<li><a href="#part3">Individual Final</a></li>
+				<li><a href="#part4">Group Final</a></li>
+			</ul>
+		</div>
+		
+		<div id = "mainContent">
+		<a name="part1"></a>
+		
+		<h1>409 / 737 Practice Practical Exam</h1>
+		  
+		  <h2>Overview</h2>
+		  <p>
+			You will need to complete the following within a 1-hour 40 minute period. You will be setting up a
+			template for a simple online newspaper. See below for a screen snapshot of a sample-solution.
+			Your web-page display will have the following high-level structure:</p>
+		  <ul>
+			<li>
+			  A <em>masthead area</em> at the top <em>displaying</em> this
+			  <a href="iht_home_old.gif" title="old IHT masthead graphic">International Herald
+			  Tribune graphic</a>.
+			</li>
+			<li>A <em>lower area</em> containing:
+			  <ul>
+				<li>A <em>table of contents area</em> across the page and below the <em>masthead area</em></li>
+				<li>A <em>content area</em> below the <em>table of contents</em> and the <em>masthead area</em></li>
+			  </ul>
+			</li>
+		  </ul>
+		  <h2>Details</h2>
+		  <p>
+			The <em>masthead area</em> should contain the graphic (see above), have a border set to
+			a yellow web-safe non-default color (not just &quot;yellow&quot;), have a red web-safe background color
+			(not just &quot;red&quot;), and be aligned to the center of it&apos;s enclosing box. The enclosing box
+			should be set to a width of 800 pixels and be padded by 10 pixels.
+		  </p>
+		  <p>
+			The <em>lower area</em> should have a margin placing it 10 pixels below the
+			<em>masthead area</em>. It should be 800 pixels wide, 500 pixels tall,
+			have a border set to a non-default green web-safe color (not just &quot;green&quot;),
+			and be padded by 10 pixels. The <em>table of contents area</em> and the <em>content
+			area</em> should be within the <em>lower area</em>.</p>
+		  <p>
+			The <em>table of contents area</em> should be 90 percent of the width,
+			have a bottom border set to a non-default blue web-safe color (not just &quot;blue&quot;),
+			have top and bottom margins of 10 pixels, extend across the top of the page,
+			and be above the <em>content area</em>.
+		  </p>
+		  <p>
+			The <em>content area</em> should have a top margin <em>and</em> padding at the top of 10 pixels,
+			and should be below the <em>table of contents area</em>.
+		  </p>
+		  <p>
+			The <em>table of contents area</em> should contain a list of four choices. Each choice
+			should change to a non-default yellow (not just &quot;yellow&quot;) background color and to
+			using the "hand" cursor upon mouseover, and each choice should change to the default
+			background color and cursor upon mouseout. You <strong><em>must</em></strong> use
+			<strong><em>JavaScript</em></strong> to accomplish this.
+		  </p>
+		  <p>
+			The <em>content area</em> should contain four chunks of text, all positioned to the same location.
+			Clicking on a choice in the <em>table of contents area</em> should reveal the appropriate new chunk of text in
+			the <em>content area</em> and make all other chunks of text disappear. You <strong><em>must</em></strong>
+			use <strong><em>JavaScript</em></strong> to accomplish this.
+		  </p>
+		  <p>
+			When the page first loads, the first of the four text chunks should display in the <em>content
+			area</em>. You may make up your own chunks of text  or you may grab random text from
+			anywhere, your choice. <strong><em>Remember</em></strong>: four different chunks, so
+			1 of 4 things shows at a time.
+		  </p>
+		  <p>
+			The navigation list in the <em>table of contents area</em> should have no &quot;bullets&quot;
+			or other marker graphics for the list items, and it should use padding and margins of 10 pixels.
+		  </p>
+		  <p><em>Notes:</em></p>
+		  <ul>
+			<li>Use:
+			  <ul>
+				  <li>XHTML 1.0 (Strict) or HTML 5 (Strict)</li>
+				  <li>CSS 2.1 or CSS 3</li>
+			  </ul>
+			</li>
+			<li>The XHTML/HTML5 file must be purely XHTML/HTML5 (CSS and JavaScript go into their own files)</li>
+			<li>The XHTML/HTML5, CSS, and Javascript must all be valid and well-formed.</li>
+			<li>
+			  You may use any of the approaches to hiding/revealing information which we have gone over
+			  in this class: manipulating the visibility attribute, changing the z-order, and so on.
+			</li>
+		  </ul>
+		  <p>
+			Post the results to a new directory in your account on <em>gibson</em>. The resulting file should be the
+			<em>default</em> file which loads when I send a browser to the following URI:
+		  </p>
+		  <ul>
+			<li>Undergraduates (409): <strong><em>http://people.rit.edu/~yourID/409/winterPracticePractical/</em></strong></li>
+			<li>Graduates (737): <strong><em>http://people.rit.edu/~yourID/737/wihnterPracticePractical/</em></strong></li>
+		  </ul>
+		  <p>
+			Of course, the CSS and XHTML/HTML5 must pass testing by the validators at W3C.
+		  </p>
+		  <hr />
+		  <h2>Sample solution screen snapshot</h2>
+		  <p>
+			<img src="./springPractical409.png" title="image of example solution" width="429" height="460"
+			  alt="sample solution screen snapshot" style="border: thin solid grey;"/>
+		  </p>
+
+				
+	</div>
+
+</body>
+</html>
